@@ -6,7 +6,7 @@
 sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy python3-numpy build-essential python-pip python3-pip python-virtualenv swig python-wheel libcurl3-dev
 
 2. install nvidia drivers 
-```bash
+``` bash
 # The 16.04 installer works with 16.10.
 curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
 dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
@@ -15,7 +15,7 @@ apt-get install cuda -y
 ```  
 
 3. install cuda toolkit 
-```bash
+``` bash
 wget https://s3.amazonaws.com/personal-waf/cuda_8.0.61_375.26_linux.run   
 sudo sh cuda_8.0.61_375.26_linux.run   # press and hold s to skip agreement   
 
@@ -49,7 +49,7 @@ sudo sh cuda_8.0.61_375.26_linux.run   # press and hold s to skip agreement
 ```    
 
 4. Install cudnn   
-```bash
+``` bash
 wget https://s3.amazonaws.com/personal-waf/cudnn-8.0-linux-x64-v5.1.tgz   
 sudo tar -xzvf cudnn-8.0-linux-x64-v5.1.tgz   
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
@@ -58,18 +58,18 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 ```    
 
 5. Add these lines to end of ~/.bashrc:   
-```
+``` bash
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
 ```   
 
 6. Reload bashrc     
-```bash 
+``` bash 
 source ~/.bashrc
 ```   
 
 7. Install miniconda   
-```
+``` bash
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh   
 
@@ -88,30 +88,30 @@ bash Miniconda3-latest-Linux-x86_64.sh
 ```   
 
 8. Reload bashrc     
-```bash 
+``` bash 
 source ~/.bashrc
 ```   
 
 9. Create conda env to install tf   
-```bash
+``` bash
 conda create -n tensorflow
 
 # press y a few times 
 ```   
 
 10. Activate env   
-```bash
+``` bash
 source activate tensorflow   
 ```
 
 11. Install tensorflow with GPU support for python 3.6    
-```
+``` bash
 # pip install --ignore-installed --upgrade aTFUrl
 pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.0-cp36-cp36m-linux_x86_64.whl
 ```   
 
 12. Test tf install   
-```
+``` bash
 # start python shell   
 python
 
