@@ -2,8 +2,9 @@
 
 
 1. Install some apt-get deps  
-
-sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy python3-numpy build-essential python-pip python3-pip python-virtualenv swig python-wheel libcurl3-dev
+``` bash
+sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy python3-numpy build-essential python-pip python3-pip python-virtualenv swig python-wheel libcurl3-dev   
+```
 
 2. install nvidia drivers 
 ``` bash
