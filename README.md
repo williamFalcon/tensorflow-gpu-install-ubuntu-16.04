@@ -1,7 +1,7 @@
 # Tensorflow GPU install on ubuntu 16.04    
 
 
-1. Install some apt-get deps  
+1. Install apt-get deps  
 ``` bash
 sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy python3-numpy build-essential python-pip python3-pip python-virtualenv swig python-wheel libcurl3-dev   
 ```
