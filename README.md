@@ -20,6 +20,14 @@ apt-get update
 apt-get install cuda -y
 ```  
 
+2a. check nvidia driver install 
+``` bash
+nvidia-smi   
+
+# you should see a list of gpus printed    
+# if not, the previous steps failed.   
+``` 
+
 3. install cuda toolkit 
 ``` bash
 wget https://s3.amazonaws.com/personal-waf/cuda_8.0.61_375.26_linux.run   
