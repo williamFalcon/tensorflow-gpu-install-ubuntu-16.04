@@ -28,7 +28,7 @@ nvidia-smi
 # if not, the previous steps failed.   
 ``` 
 
-3. install cuda toolkit 
+3. install cuda toolkit (MAKE SURE TO SELECT N TO INSTALL NVIDIA DRIVERS)
 ``` bash
 wget https://s3.amazonaws.com/personal-waf/cuda_8.0.61_375.26_linux.run   
 sudo sh cuda_8.0.61_375.26_linux.run   # press and hold s to skip agreement   
@@ -37,6 +37,8 @@ sudo sh cuda_8.0.61_375.26_linux.run   # press and hold s to skip agreement
 # accept
 
 # Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 361.62?
+# ************************* VERY KEY ****************************
+# ******************** DON"T SAY Y ******************************
 # n
 
 # Install the CUDA 8.0 Toolkit?
