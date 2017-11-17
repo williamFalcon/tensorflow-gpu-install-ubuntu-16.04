@@ -66,8 +66,8 @@ sudo sh cuda_8.0.61_375.26_linux.run   # press and hold s to skip agreement
 
 4. Install cudnn   
 ``` bash
-wget https://s3.amazonaws.com/personal-waf/cudnn-8.0-linux-x64-v5.1.tgz   
-sudo tar -xzvf cudnn-8.0-linux-x64-v5.1.tgz   
+wget https://s3.amazonaws.com/open-source-william-falcon/cudnn-8.0-linux-x64-v6.0.tgz  
+sudo tar -xzvf cudnn-8.0-linux-x64-v6.0.tgz   
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
