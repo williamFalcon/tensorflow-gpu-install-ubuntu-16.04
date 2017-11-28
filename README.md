@@ -1,5 +1,16 @@
 # Tensorflow GPU install on ubuntu 16.04    
 
+These instructions are intended to set up a deep learning environment for GPU-powered tensorflow.    
+
+After following these instructions you'll have:
+
+1. Ubuntu 16.04. 
+2. Cuda 8 drivers installed.
+3. A conda environment with python 3.6.    
+4. The latest tensorflow version with gpu support.   
+
+<span style="color:green"> NOTE: Pay SPECIAL attention to step 3 and say NO to installing the graphics driver.    </span>
+
 
 0. update apt-get   
 ``` bash 
