@@ -9,8 +9,7 @@ After following these instructions you'll have:
 3. A conda environment with python 3.6.    
 4. The latest tensorflow version with gpu support.   
 
-<span style="color:green"> NOTE: Pay SPECIAL attention to step 3 and say NO to installing the graphics driver.    </span>
-
+<span style="color:red">NOTE: Pay SPECIAL attention to step 3 and say NO to installing the graphics driver.</span>   
 
 0. update apt-get   
 ``` bash 
