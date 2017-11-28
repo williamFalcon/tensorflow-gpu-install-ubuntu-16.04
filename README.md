@@ -122,8 +122,10 @@ source activate tensorflow
 
 11. Install tensorflow with GPU support for python 3.6    
 ``` bash
-# pip install --ignore-installed --upgrade aTFUrl
-pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.0-cp36-cp36m-linux_x86_64.whl
+pip install tensorflow-gpu
+
+# If the above fails, try the part below
+# pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.0-cp36-cp36m-linux_x86_64.whl
 ```   
 
 12. Test tf install   
