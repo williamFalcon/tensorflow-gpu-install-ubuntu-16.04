@@ -27,7 +27,8 @@ sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy pytho
 curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
 dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
 apt-get update
-apt-get install cuda -y
+#  Added this to make sure we don't drag down the newest version of cuda!
+apt-get install cuda=8.0.61-1 -y
 ```  
 
 2a. check nvidia driver install 
