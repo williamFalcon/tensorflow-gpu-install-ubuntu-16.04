@@ -2,6 +2,20 @@
 
 These instructions are intended to set up a deep learning environment for GPU-powered tensorflow.    
 
+<hr>
+Before you begin, you may need to disable the nouveau video driver in Ubuntu.  This dynamic library can cause problems with the GeForce 1080ti and can result in linux not being able to start xwindows after you enter your username and password.  You can disable the nouveau drivers like so:
+
+1. After you boot the linux system and are sitting at a login prompt, press ctrl+alt+F1 to get to a terminal screen.  Login via this terminal screen.
+2. Create a file: /etc/modprobe.d/nouveau
+3.  Put the following in the above file...
+```
+blacklist nouveau
+options nouveau modeset=0
+```
+
+Note:  The installer below may do this for you anyway.  Do this before running the installer will allow you to use the xwindows environment if you wish.  Once the above changes have been made, you should be able to reboot the linux box and log in the normal xwindows way.
+<hr>
+
 After following these instructions you'll have:
 
 1. Ubuntu 16.04. 
@@ -9,18 +23,7 @@ After following these instructions you'll have:
 3. A conda environment with python 3.6.    
 4. The latest tensorflow version with gpu support.   
 
-===
-Before you begin, you may need to disable the nouveau driver for the GeForce 1080ti.  To do that...
 
-1. When you boot press ctrl+alt+F1 to get to a login terminal.
-2. Create a file: /etc/modprobe.d/nouveau
-3.  Put this in the file:
-blacklist nouveau
-options nouveau modeset=0
-
-Note:  The installer below may do this for you anyway.
-
-===
 
 <span style="color:red">NOTE: Pay SPECIAL attention to step 3 and say NO to installing the graphics driver.</span>   
 
