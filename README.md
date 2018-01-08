@@ -3,7 +3,7 @@
 These instructions are intended to set up a deep learning environment for GPU-powered tensorflow.    
 
 <hr>
-Before you begin, you may need to disable the nouveau (see https://nouveau.freedesktop.org/wiki/) video driver in Ubuntu.  The nouveau driver is an opensource driver for nVidia cards.  Unfortunately, this dynamic library can cause problems with the GeForce 1080ti and can result in linux not being able to start xwindows after you enter your username and password.  You can disable the nouveau drivers like so:
+Before you begin, you may need to disable the nouveau (see https://nouveau.freedesktop.org/wiki/) video driver in Ubuntu.  The nouveau driver is an opensource driver for nVidia cards.  Unfortunately, this dynamic library can cause problems with the GeForce 1080ti and can result in linux not being able to start xwindows after you enter your username and password.  You can disable the nouveau drivers like so:<br><br>
 
 1. After you boot the linux system and are sitting at a login prompt, press ctrl+alt+F1 to get to a terminal screen.  Login via this terminal screen.
 2. Create a file: /etc/modprobe.d/nouveau
@@ -13,7 +13,7 @@ blacklist nouveau
 options nouveau modeset=0
 ```
 
-Note:  The installer below may do this for you anyway.  Do this before running the installer will allow you to use the xwindows environment if you wish.  Once the above changes have been made, you should be able to reboot the linux box and log in the normal xwindows way.
+Note:  The installer below may do this for you anyway.  Doing these steps before running the installer will allow you to use the xwindows environment if you wish.  Once the above changes have been made, you should be able to reboot the linux box and login using the default Ubuntu 16.04 method.
 <hr>
 
 After following these instructions you'll have:
