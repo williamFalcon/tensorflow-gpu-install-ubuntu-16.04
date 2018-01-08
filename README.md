@@ -13,7 +13,7 @@ blacklist nouveau
 options nouveau modeset=0
 ```
 
-Note:  The installer below may do this for you anyway.  Doing these steps before running the installer will allow you to use the xwindows environment if you wish.  Once the above changes have been made, you should be able to reboot the linux box and login using the default Ubuntu 16.04 method.
+Note: Once the above changes have been made, you should be able to reboot the linux box and login using the default Ubuntu 16.04 method.
 <hr>
 
 After following these instructions you'll have:
