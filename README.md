@@ -2,12 +2,28 @@
 
 These instructions are intended to set up a deep learning environment for GPU-powered tensorflow.    
 
+<hr>
+Before you begin, you may need to disable the nouveau (see https://nouveau.freedesktop.org/wiki/) video driver in Ubuntu.  The nouveau driver is an opensource driver for nVidia cards.  Unfortunately, this dynamic library can cause problems with the GeForce 1080ti and can result in linux not being able to start xwindows after you enter your username and password.  You can disable the nouveau drivers like so:<br><br>
+
+1. After you boot the linux system and are sitting at a login prompt, press ctrl+alt+F1 to get to a terminal screen.  Login via this terminal screen.
+2. Create a file: /etc/modprobe.d/nouveau
+3.  Put the following in the above file...
+```
+blacklist nouveau
+options nouveau modeset=0
+```
+
+Note: Once the above changes have been made, you should be able to reboot the linux box and login using the default Ubuntu 16.04 method.
+<hr>
+
 After following these instructions you'll have:
 
 1. Ubuntu 16.04. 
 2. Cuda 8 drivers installed.
 3. A conda environment with python 3.6.    
 4. The latest tensorflow version with gpu support.   
+
+
 
 <span style="color:red">NOTE: Pay SPECIAL attention to step 3 and say NO to installing the graphics driver.</span>   
 
@@ -27,7 +43,8 @@ sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy pytho
 curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
 dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
 apt-get update
-apt-get install cuda -y
+#  Added this to make sure we don't drag down the newest version of cuda!
+apt-get install cuda=8.0.61-1 -y
 ```  
 
 2a. check nvidia driver install 
