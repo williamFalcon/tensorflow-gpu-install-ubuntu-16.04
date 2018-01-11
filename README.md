@@ -45,9 +45,14 @@ dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
 apt-get update
 #  Added this to make sure we don't drag down the newest version of cuda!
 apt-get install cuda=8.0.61-1 -y
-```  
+```    
 
-2a. check nvidia driver install 
+2a. reboot Ubuntu
+```bash
+sudo reboot
+```    
+
+2b. check nvidia driver install 
 ``` bash
 nvidia-smi   
 
