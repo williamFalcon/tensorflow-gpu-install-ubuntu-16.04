@@ -14,6 +14,13 @@ options nouveau modeset=0
 ```
 
 Note: Once the above changes have been made, you should be able to reboot the linux box and login using the default Ubuntu 16.04 method.
+
+After rebooting verify that `nouveau` is not loaded by running the following command and nothing should be printed
+```
+lsmod | grep nouveau
+```
+
+If `nouveau` driver(s) are still loaded do not proceed with the installation guide and troubleshoot why it's still loaded.
 <hr>
 
 After following these instructions you'll have:
