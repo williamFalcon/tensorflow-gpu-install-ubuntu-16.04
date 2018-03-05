@@ -26,7 +26,7 @@ If `nouveau` driver(s) are still loaded do not proceed with the installation gui
 After following these instructions you'll have:
 
 1. Ubuntu 16.04. 
-2. Cuda 8 drivers installed.
+2. Cuda 9 drivers installed.
 3. A conda environment with python 3.6.    
 4. The latest tensorflow version with gpu support.   
 
@@ -47,11 +47,20 @@ sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy pytho
 2. install nvidia drivers 
 ``` bash
 # The 16.04 installer works with 16.10.
-curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
-dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
-apt-get update
-#  Added this to make sure we don't drag down the newest version of cuda!
-apt-get install cuda=8.0.61-1 -y
+# download drivers
+curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_9.1.85-1_amd64.deb
+
+# download key to allow installation
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+
+# install actual package
+sudo dpkg -i ./cuda-repo-ubuntu1604_9.1.85-1_amd64.deb 
+sudo apt-get update
+
+#  install cuda (but it'll prompt to install other deps, so we try to install twice with a dep update in between
+sudo apt-get install cuda=9.1.85-1 -y
+sudo apt-get install -f
+sudo apt-get install cuda=9.1.85-1 -y
 ```    
 
 2a. reboot Ubuntu
