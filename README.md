@@ -48,19 +48,17 @@ sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy pytho
 ``` bash
 # The 16.04 installer works with 16.10.
 # download drivers
-curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_9.1.85-1_amd64.deb
+curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
 
 # download key to allow installation
 sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
 
 # install actual package
-sudo dpkg -i ./cuda-repo-ubuntu1604_9.1.85-1_amd64.deb 
-sudo apt-get update
+sudo dpkg -i ./cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
 
 #  install cuda (but it'll prompt to install other deps, so we try to install twice with a dep update in between
-sudo apt-get install cuda=9.1.85-1 -y
-sudo apt-get install -f
-sudo apt-get install cuda=9.1.85-1 -y
+sudo apt-get update
+sudo apt-get install cuda-9-0   
 ```    
 
 2a. reboot Ubuntu
