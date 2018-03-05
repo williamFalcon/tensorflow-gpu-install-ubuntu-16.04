@@ -3,27 +3,6 @@
 These instructions are intended to set up a deep learning environment for GPU-powered tensorflow.      
 [See here for pytorch GPU install instructions](https://github.com/williamFalcon/pytorch-gpu-install)
 
-<hr>
-Before you begin, you may need to disable the nouveau (see https://nouveau.freedesktop.org/wiki/) video driver in Ubuntu.  The nouveau driver is an opensource driver for nVidia cards.  Unfortunately, this dynamic library can cause problems with the GeForce 1080ti and can result in linux not being able to start xwindows after you enter your username and password.  You can disable the nouveau drivers like so:<br><br>
-
-1. After you boot the linux system and are sitting at a login prompt, press ctrl+alt+F1 to get to a terminal screen.  Login via this terminal screen.
-2. Create a file: /etc/modprobe.d/nouveau
-3.  Put the following in the above file...
-```
-blacklist nouveau
-options nouveau modeset=0
-```
-
-Note: Once the above changes have been made, you should be able to reboot the linux box and login using the default Ubuntu 16.04 method.
-
-After rebooting verify that `nouveau` is not loaded by running the following command and nothing should be printed
-```
-lsmod | grep nouveau
-```
-
-If `nouveau` driver(s) are still loaded do not proceed with the installation guide and troubleshoot why it's still loaded.
-<hr>
-
 After following these instructions you'll have:
 
 1. Ubuntu 16.04. 
@@ -31,7 +10,45 @@ After following these instructions you'll have:
 3. A conda environment with python 3.6.    
 4. The latest tensorflow version with gpu support.   
 
-## Installation steps   
+## Step 0: Noveau drivers     
+Before you begin, you may need to disable the opensource ubuntu NVIDIA driver called [nouveau](https://nouveau.freedesktop.org/wiki/).
+
+### Option 1: Modify modprobe file
+1. After you boot the linux system and are sitting at a login prompt, press ctrl+alt+F1 to get to a terminal screen.  Login via this terminal screen.
+2. Create a file: /etc/modprobe.d/nouveau
+3.  Put the following in the above file...
+```
+blacklist nouveau
+options nouveau modeset=0
+```
+4. reboot system   
+```bash
+reboot
+```   
+    
+5. On reboot, verify that noveau drivers are not loaded   
+```
+lsmod | grep nouveau
+```
+
+If `nouveau` driver(s) are still loaded do not proceed with the installation guide and troubleshoot why it's still loaded.    
+
+### Option 2: Modify Grub load command    
+From [this stackoverflow solution](https://askubuntu.com/questions/697389/blank-screen-ubuntu-15-04-update-with-nvidia-driver-nomodeset-does-not-work)    
+
+1. When the GRUB boot menu appears : Highlight the Ubuntu menu entry and press the E key.
+Add the nouveau.modeset=0 parameter to the end of the linux line ... Then press F10 to boot.   
+2. When login page appears press [ctrl + ALt + F1]    
+3. Enter username + password   
+4. Uninstall every NVIDIA related software:   
+```bash    
+sudo apt-get purge nvidia*  
+sudo reboot   
+```   
+
+
+## Installation steps     
+
 
 0. update apt-get   
 ``` bash 
