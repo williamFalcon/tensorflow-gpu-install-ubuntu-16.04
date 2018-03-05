@@ -26,7 +26,7 @@ If `nouveau` driver(s) are still loaded do not proceed with the installation gui
 After following these instructions you'll have:
 
 1. Ubuntu 16.04. 
-2. Cuda 9.1 drivers installed.
+2. Cuda 9.0 drivers installed.
 3. A conda environment with python 3.6.    
 4. The latest tensorflow version with gpu support.   
 
@@ -78,8 +78,8 @@ nvidia-smi
 
 3. Install cudnn   
 ``` bash
-wget https://s3.amazonaws.com/open-source-william-falcon/cudnn-9.1-linux-x64-v7.1.tgz  
-sudo tar -xzvf cudnn-9.1-linux-x64-v7.1.tgz  
+wget https://s3.amazonaws.com/open-source-william-falcon/cudnn-9.0-linux-x64-v7.1.tgz  
+sudo tar -xzvf cudnn-9.0-linux-x64-v7.1.tgz  
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
