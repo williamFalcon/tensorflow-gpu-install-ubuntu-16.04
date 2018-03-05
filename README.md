@@ -1,6 +1,7 @@
 # Tensorflow GPU install on ubuntu 16.04    
 
-These instructions are intended to set up a deep learning environment for GPU-powered tensorflow.    
+These instructions are intended to set up a deep learning environment for GPU-powered tensorflow.      
+[See here for pytorch GPU install instructions](https://github.com/williamFalcon/pytorch-gpu-install)
 
 <hr>
 Before you begin, you may need to disable the nouveau (see https://nouveau.freedesktop.org/wiki/) video driver in Ubuntu.  The nouveau driver is an opensource driver for nVidia cards.  Unfortunately, this dynamic library can cause problems with the GeForce 1080ti and can result in linux not being able to start xwindows after you enter your username and password.  You can disable the nouveau drivers like so:<br><br>
