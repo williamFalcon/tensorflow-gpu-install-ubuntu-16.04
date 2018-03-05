@@ -26,7 +26,7 @@ If `nouveau` driver(s) are still loaded do not proceed with the installation gui
 After following these instructions you'll have:
 
 1. Ubuntu 16.04. 
-2. Cuda 9 drivers installed.
+2. Cuda 9.1 drivers installed.
 3. A conda environment with python 3.6.    
 4. The latest tensorflow version with gpu support.   
 
