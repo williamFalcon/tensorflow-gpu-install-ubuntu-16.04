@@ -76,63 +76,27 @@ nvidia-smi
 # if not, the previous steps failed.   
 ``` 
 
-3. install cuda toolkit (MAKE SURE TO SELECT N TO INSTALL NVIDIA DRIVERS)
+3. Install cudnn   
 ``` bash
-wget https://s3.amazonaws.com/personal-waf/cuda_8.0.61_375.26_linux.run   
-sudo sh cuda_8.0.61_375.26_linux.run   # press and hold s to skip agreement   
-
-# Do you accept the previously read EULA?
-# accept
-
-# Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 361.62?
-# ************************* VERY KEY ****************************
-# ******************** DON"T SAY Y ******************************
-# n
-
-# Install the CUDA 8.0 Toolkit?
-# y
-
-# Enter Toolkit Location
-# press enter
-
-
-# Do you want to install a symbolic link at /usr/local/cuda?
-# y
-
-# Install the CUDA 8.0 Samples?
-# y
-
-# Enter CUDA Samples Location
-# press enter    
-
-# now this prints: 
-# Installing the CUDA Toolkit in /usr/local/cuda-8.0 …
-# Installing the CUDA Samples in /home/liping …
-# Copying samples to /home/liping/NVIDIA_CUDA-8.0_Samples now…
-# Finished copying samples.
-```    
-
-4. Install cudnn   
-``` bash
-wget https://s3.amazonaws.com/open-source-william-falcon/cudnn-8.0-linux-x64-v6.0.tgz  
-sudo tar -xzvf cudnn-8.0-linux-x64-v6.0.tgz   
+wget https://s3.amazonaws.com/open-source-william-falcon/cudnn-9.1-linux-x64-v7.1.tgz  
+sudo tar -xzvf cudnn-9.1-linux-x64-v7.1.tgz  
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 ```    
 
-5. Add these lines to end of ~/.bashrc:   
+4. Add these lines to end of ~/.bashrc:   
 ``` bash
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
 ```   
 
-6. Reload bashrc     
+4a. Reload bashrc     
 ``` bash 
 source ~/.bashrc
 ```   
 
-7. Install miniconda   
+5. Install miniconda   
 ``` bash
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh   
@@ -151,24 +115,24 @@ bash Miniconda3-latest-Linux-x86_64.sh
 
 ```   
 
-8. Reload bashrc     
+5a. Reload bashrc     
 ``` bash 
 source ~/.bashrc
 ```   
 
-9. Create conda env to install tf   
+6. Create conda env to install tf   
 ``` bash
 conda create -n tensorflow
 
 # press y a few times 
 ```   
 
-10. Activate env   
+7. Activate env   
 ``` bash
 source activate tensorflow   
 ```
 
-11. Install tensorflow with GPU support for python 3.6    
+8. Install tensorflow with GPU support for python 3.6    
 ``` bash
 pip install tensorflow-gpu
 
@@ -176,7 +140,7 @@ pip install tensorflow-gpu
 # pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.0-cp36-cp36m-linux_x86_64.whl
 ```   
 
-12. Test tf install   
+9. Test tf install   
 ``` bash
 # start python shell   
 python
