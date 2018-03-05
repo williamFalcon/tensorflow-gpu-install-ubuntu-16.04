@@ -32,8 +32,6 @@ After following these instructions you'll have:
 
 ## Installation steps   
 
-<span style="color:red">NOTE: Pay SPECIAL attention to step 3 and say NO to installing the graphics driver.</span>   
-
 0. update apt-get   
 ``` bash 
 sudo apt-get update
