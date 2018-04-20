@@ -58,7 +58,7 @@ sudo apt-get update
    
 1. Install apt-get deps  
 ``` bash
-sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy python3-numpy build-essential python-pip python3-pip python-virtualenv swig python-wheel libcurl3-dev   
+sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy python3-numpy build-essential python-pip python3-pip python-virtualenv swig python-wheel libcurl3-dev curl   
 ```
 
 2. install nvidia drivers 
