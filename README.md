@@ -22,12 +22,17 @@ Before you begin, you may need to disable the opensource ubuntu NVIDIA driver ca
 blacklist nouveau
 options nouveau modeset=0
 ```
-4. reboot system   
+4. update the initramfs
+```
+sudo update-initramfs -u
+```
+
+5. reboot system   
 ```bash
 reboot
 ```   
     
-5. On reboot, verify that noveau drivers are not loaded   
+6. On reboot, verify that noveau drivers are not loaded   
 ```
 lsmod | grep nouveau
 ```
