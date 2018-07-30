@@ -149,7 +149,7 @@ source activate tensorflow
 
 8. Install tensorflow with GPU support for python 3.6    
 ``` bash
-pip install tensorflow-gpu
+pip install tf-nightly-gpu
 
 # If the above fails, try the part below
 # pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.0-cp36-cp36m-linux_x86_64.whl
