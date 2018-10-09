@@ -7,7 +7,7 @@ After following these instructions you'll have:
 
 1. Ubuntu 16.04. 
 2. Cuda 9.0 drivers installed.
-3. A conda environment with python 3.6.    
+3. A python virtuaenv with python 3.6    
 4. The latest tensorflow version with gpu support.   
 
 ---   
@@ -58,7 +58,7 @@ sudo apt-get update
    
 1. Install apt-get deps  
 ``` bash
-sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy python3-numpy build-essential python-pip python3-pip python-virtualenv swig python-wheel libcurl3-dev curl   
+sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy python3-numpy build-essential python-pip python3-pip swig python-wheel libcurl3-dev curl   
 ```
 
 2. install nvidia drivers 
@@ -112,48 +112,40 @@ export PATH="$PATH:/usr/local/cuda/bin"
 source ~/.bashrc
 ```   
 
-5. Install miniconda   
+5. Install Python virtualenv and virtualenvwrapper for Python 3.6   
 ``` bash
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh   
-
-# press s to skip terms   
-
-# Do you approve the license terms? [yes|no]
-# yes
-
-# Miniconda3 will now be installed into this location:
-# accept the location
-
-# Do you wish the installer to prepend the Miniconda3 install location
-# to PATH in your /home/ghost/.bashrc ? [yes|no]
-# yes    
-
+sudo pip3 install virtualenv virtualenvwrapper
 ```   
 
-5a. Reload bashrc     
+5a. Add these lines to end of  ~/.bashrc:
+``` bash
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+```  
+
+5b. Reload bashrc     
 ``` bash 
 source ~/.bashrc
 ```   
 
-6. Create conda env to install tf   
+6. Create virtualenv to install tf   
 ``` bash
-conda create -n tensorflow
-
-# press y a few times 
+mkvirtualenv tensorflow -p python3.6
 ```   
 
 7. Activate env   
 ``` bash
-source activate tensorflow   
+workon tensorflow   
 ```
 
 8. Install tensorflow with GPU support for python 3.6    
 ``` bash
-pip install tf-nightly-gpu
+pip install --upgrade pip
+
+pip install tensorflow-gpu
 
 # If the above fails, try the part below
-# pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.0-cp36-cp36m-linux_x86_64.whl
+# pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.11.0-cp36-cp36m-linux_x86_64.whl
 ```   
 
 9. Test tf install   
