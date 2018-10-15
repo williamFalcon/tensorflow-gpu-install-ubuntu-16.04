@@ -92,6 +92,7 @@ nvidia-smi
 ``` 
 
 3. Install cudnn 
+
 Download cuDNN from official [NVIDIA Developer Program website](https://developer.nvidia.com/cudnn) which requires registration.
 ``` bash
 sudo tar -xvf cudnn-9.0-linux-x64-v7.3.1.20.tar # replace the filename with yours  
