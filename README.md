@@ -91,10 +91,10 @@ nvidia-smi
 # if not, the previous steps failed.   
 ``` 
 
-3. Install cudnn   
+3. Install cudnn 
+Download cuDNN from official [NVIDIA Developer Program website](https://developer.nvidia.com/cudnn) which requires registration.
 ``` bash
-wget https://s3.amazonaws.com/open-source-william-falcon/cudnn-9.0-linux-x64-v7.1.tgz  
-sudo tar -xzvf cudnn-9.0-linux-x64-v7.1.tgz  
+sudo tar -xvf cudnn-9.0-linux-x64-v7.3.1.20.tar # replace the filename with yours  
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
