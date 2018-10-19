@@ -16,18 +16,22 @@ Before you begin, you may need to disable the opensource ubuntu NVIDIA driver ca
 
 **Option 1: Modify modprobe file**
 1. After you boot the linux system and are sitting at a login prompt, press ctrl+alt+F1 to get to a terminal screen.  Login via this terminal screen.
-2. Create a file: /etc/modprobe.d/nouveau
+2. Create a file: /etc/modprobe.d/nouveau.conf
 3.  Put the following in the above file...
 ```
 blacklist nouveau
 options nouveau modeset=0
 ```
-4. reboot system   
+4. update initramfs
+```
+sudo update-initramfs -u
+```
+5. reboot system   
 ```bash
 reboot
 ```   
     
-5. On reboot, verify that noveau drivers are not loaded   
+6. On reboot, verify that noveau drivers are not loaded   
 ```
 lsmod | grep nouveau
 ```
