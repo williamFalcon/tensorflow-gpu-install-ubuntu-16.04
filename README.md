@@ -144,9 +144,9 @@ bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 ```   
 
-6. Create conda env to install tf   
+6. Create python 3.6 conda env to install tf   
 ``` bash
-conda create -n tensorflow
+conda create -n tensorflow python=3.6
 
 # press y a few times 
 ```   
@@ -156,15 +156,20 @@ conda create -n tensorflow
 source activate tensorflow   
 ```
 
-8. Install tensorflow with GPU support for python 3.6    
+8. update pip (might already be up to date, but just in case...)
+```
+pip install --upgrade pip
+```
+
+9. Install stable tensorflow with GPU support for python 3.6    
 ``` bash
-pip install tf-nightly-gpu
+pip install --upgrade tensorflow-gpu
 
 # If the above fails, try the part below
 # pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.2.0-cp36-cp36m-linux_x86_64.whl
 ```   
 
-9. Test tf install   
+10. Test tf install   
 ``` bash
 # start python shell   
 python
@@ -179,3 +184,9 @@ hello = tf.constant('Hello, TensorFlow!')
 sess = tf.Session()
 print(sess.run(hello))
 ```  
+
+or alternatively
+
+```
+tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
+```
