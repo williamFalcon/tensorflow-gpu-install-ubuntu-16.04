@@ -16,6 +16,7 @@ Before you begin, you may need to disable the opensource ubuntu NVIDIA driver ca
 
 **Option 1: Modify modprobe file**
 1. After you boot the linux system and are sitting at a login prompt, press ctrl+alt+F1 to get to a terminal screen.  Login via this terminal screen.
+
 2. Create a file: /etc/modprobe.d/nouveau-blacklist.conf e.g. by 
 ```
 sudo touch /etc/modprobe.d/nouveau-blacklist.conf
@@ -25,7 +26,9 @@ sudo touch /etc/modprobe.d/nouveau-blacklist.conf
 blacklist nouveau
 options nouveau modeset=0
 ```
+
 4. Regenerate the kernel initramfs
+
 ```
 sudo update-initramfs -u
 ```
